@@ -6,6 +6,11 @@
       "sourceType": "github",
       "computedHash": "d2b5bcc7c09fdb649129ffc7dd7b647ec1b155736974b974292675afd588cb39"
     },
+    "refactoring-ui": {
+      "source": "wondelai/skills",
+      "sourceType": "github",
+      "computedHash": "9fdbcb89c11fb0159c9ad4d43499e3042c8904225b85d714abb7362576629ff1"
+    },
     "vercel-cli-with-tokens": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
