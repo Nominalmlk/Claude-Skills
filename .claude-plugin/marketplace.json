@@ -546,6 +546,26 @@
         "product"
       ],
       "category": "product"
+    },
+    {
+      "name": "caveman",
+      "source": "./caveman",
+      "description": "Ultra-compressed communication mode. Cuts ~75% of tokens while keeping full technical accuracy by speaking like a caveman. Six intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Includes caveman-commit and caveman-review sub-skills.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Julius Brussee",
+        "url": "https://github.com/JuliusBrussee"
+      },
+      "repository": "https://github.com/JuliusBrussee/caveman",
+      "keywords": [
+        "token-compression",
+        "terse",
+        "caveman",
+        "communication",
+        "commit",
+        "code-review"
+      ],
+      "category": "development"
     }
   ]
 }
