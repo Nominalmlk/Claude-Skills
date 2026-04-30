@@ -546,6 +546,26 @@
         "product"
       ],
       "category": "product"
+    },
+    {
+      "name": "caveman",
+      "source": "./caveman",
+      "description": "Plain-language communication skill — simplify complex technical text, crush corporate jargon, and explain any concept in clear primitive terms. 4 slash commands (/caveman:simplify, /caveman:explain, /caveman:smash, /caveman:score), 2 Python tools (readability scorer, jargon detector), 2 reference guides (plain-language rules, 200+ term dictionary).",
+      "version": "2.2.0",
+      "author": {
+        "name": "Alireza Rezvani"
+      },
+      "keywords": [
+        "plain-language",
+        "jargon",
+        "readability",
+        "simplify",
+        "communication",
+        "documentation",
+        "eli5",
+        "technical-writing"
+      ],
+      "category": "communication"
     }
   ]
 }
