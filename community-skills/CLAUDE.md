@@ -1,10 +1,10 @@
 # Community Skills
 
-Community-contributed skills sourced from [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills).
+Community-contributed skills from multiple sources.
 
 ## Overview
 
-66 skills covering programming languages, frameworks, DevOps, architecture, and specialized domains.
+70 skills covering programming languages, frameworks, DevOps, architecture, token optimization, and specialized domains.
 
 ## Skill Categories
 
@@ -29,6 +29,9 @@ secure-code-guardian, security-reviewer
 ### Development Practices
 cli-developer, code-documenter, code-reviewer, debugging-wizard, embedded-systems, feature-forge, fullstack-guardian, game-developer, legacy-modernizer, mcp-developer, playwright-expert, prompt-engineer, salesforce-developer, spec-miner, spring-boot-engineer, test-master
 
+### Token & Cost Optimization
+fleet-auditor, token-coach, token-dashboard, token-optimizer
+
 ### Other
 atlassian-mcp, the-fool
 
@@ -43,4 +46,5 @@ skill-name/
 
 ## Attribution
 
-Source: https://github.com/Jeffallan/claude-skills (by Jeffallan)
+- [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills) — 66 skills (by Jeffallan)
+- [alexgreensh/token-optimizer](https://github.com/alexgreensh/token-optimizer) — 4 skills (by alexgreensh)
