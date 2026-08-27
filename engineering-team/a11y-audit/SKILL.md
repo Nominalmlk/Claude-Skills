@@ -54,11 +54,11 @@ python scripts/a11y_scanner.py /path/to/project
 # Scan with JSON output for tooling
 python scripts/a11y_scanner.py /path/to/project --json
 
-# Check color contrast for specific values
-python scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
+# Check color contrast for specific values (colors are positional)
+python scripts/contrast_checker.py "#777777" "#ffffff"
 
-# Check contrast across a CSS/Tailwind file
-python scripts/contrast_checker.py --file /path/to/styles.css
+# Check contrast across a CSS file
+python scripts/contrast_checker.py --batch /path/to/styles.css
 ```
 
 ### Slash Command
@@ -150,16 +150,22 @@ Options:
 ### contrast_checker.py
 
 ```
-Usage: python scripts/contrast_checker.py [options]
+Usage: python scripts/contrast_checker.py [foreground] [background] [options]
+
+Arguments:
+  foreground              Text color: #RRGGBB, #RGB, rgb(r,g,b), or named color
+  background              Background color (same accepted formats)
 
 Options:
-  --fg COLOR              Foreground color (hex)
-  --bg COLOR              Background color (hex)
-  --file FILE             Scan CSS file for color pairs
-  --tailwind DIR          Scan directory for Tailwind color classes
+  --suggest COLOR         Suggest accessible backgrounds for the given foreground
+  --batch CSS_FILE        Extract color/background-color pairs from a CSS file and check each
   --json                  Output results as JSON
-  --suggest               Suggest accessible alternatives for failures
-  --level {aa,aaa}        Target conformance level (default: aa)
+  --demo                  Show example output with sample color pairs
+
+Every check reports all five thresholds (AA Normal, AA Large, AA UI Components,
+AAA Normal, AAA Large) -- there is no conformance-level flag.
+Exit code: 0 when AA Normal Text passes, 1 when it fails (or when any pair in a
+--batch run fails), so the script drops straight into CI.
 ```
 
 ## Common Pitfalls

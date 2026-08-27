@@ -5,23 +5,32 @@
 The `contrast_checker.py` script validates color pairs against WCAG 2.2 contrast requirements.
 
 ```bash
-# Check a single color pair
-python scripts/contrast_checker.py --fg "#777777" --bg "#ffffff"
+# Check a single color pair -- colors are positional arguments
+python scripts/contrast_checker.py "#777777" "#ffffff"
 
 # Output:
-# Foreground: #777777 | Background: #ffffff
-# Contrast Ratio: 4.48:1
-# AA Normal Text (4.5:1): FAIL
-# AA Large Text (3.0:1):  PASS
-# AAA Normal Text (7.0:1): FAIL
-# Suggested alternative: #767676 (4.54:1 - passes AA)
+# Foreground : #777777
+# Background : #ffffff
+# Contrast   : 4.48:1
+#
+#   [FAIL] AA Normal Text        (requires 4.5:1)
+#   [PASS] AA Large Text         (requires 3.0:1)
+#   [PASS] AA UI Components      (requires 3.0:1)
+#   [FAIL] AAA Normal Text       (requires 7.0:1)
+#   [FAIL] AAA Large Text        (requires 4.5:1)
 
-# Scan a CSS file for all color pairs
-python scripts/contrast_checker.py --file src/styles/globals.css
+# Suggest accessible backgrounds for a foreground that failed
+python scripts/contrast_checker.py --suggest "#777777"
 
-# Scan Tailwind classes in components
-python scripts/contrast_checker.py --tailwind src/components/
+# Scan a CSS file for all color / background-color pairs
+python scripts/contrast_checker.py --batch src/styles/globals.css
+
+# Machine-readable output for CI (exit 1 when AA Normal Text fails)
+python scripts/contrast_checker.py "#777777" "#ffffff" --json
 ```
+
+Colors may be given as `#RRGGBB`, `#RGB`, `rgb(r, g, b)`, or one of 25 named CSS
+colors (`navy`, `white`, `tomato`, ...).
 
 ## Common Contrast Fixes
 
@@ -36,6 +45,9 @@ python scripts/contrast_checker.py --tailwind src/components/
 | `#ef5350` | 3.13:1 | `#c62828` | 5.57:1 (AA) |
 
 ## Tailwind CSS Accessible Palette Mapping
+
+The checker parses CSS declarations, not utility classes -- use this table as a
+manual lookup when auditing Tailwind markup.
 
 | Inaccessible Class | Contrast on White | Accessible Alternative | Contrast |
 |---------------------|------------------|----------------------|----------|
